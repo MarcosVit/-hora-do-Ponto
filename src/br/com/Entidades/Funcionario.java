@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Funcionario {
@@ -13,6 +14,8 @@ public class Funcionario {
     private int id;
     private String cpf, nome, funcao, login, senha;
     private double hrAcumulada;
+    @ManyToOne(targetEntity = DiaCorrente.class)
+    private DiaCorrente dc;
 
     public int getId() {
         return id;
@@ -69,4 +72,12 @@ public class Funcionario {
     public void setHrAcumulada(double hrAcumulada) {
         this.hrAcumulada = hrAcumulada;
     }    
+
+    public DiaCorrente getDc() {
+        return dc;
+    }
+
+    public void setDc(DiaCorrente dc) {
+        this.dc = dc;
+    }
 }
