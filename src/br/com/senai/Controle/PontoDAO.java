@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package br.com.senai.Controle;
 
-import br.com.Entidades.DiaCorrente;
-import br.com.Entidades.Funcionario;
+import br.com.senai.Entidades.DiaCorrente;
+import br.com.senai.Entidades.Funcionario;
 import br.com.Util.HibernateUtil;
 import org.hibernate.Session;
 
