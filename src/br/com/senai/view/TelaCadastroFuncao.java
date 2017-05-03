@@ -29,13 +29,13 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        jButtonCancelarCadFuncao = new javax.swing.JButton();
+        jButtonSalvarFuncao = new javax.swing.JButton();
+        jTextFieldCadNomeFuncao = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldCadTipoFuncao = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Cadastro de Função");
@@ -46,17 +46,17 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(360, 400));
         jPanel1.setMinimumSize(new java.awt.Dimension(360, 400));
 
-        jButton2.setBackground(new java.awt.Color(102, 76, 0));
-        jButton2.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
-        jButton2.setText("Cancelar");
+        jButtonCancelarCadFuncao.setBackground(new java.awt.Color(102, 76, 0));
+        jButtonCancelarCadFuncao.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
+        jButtonCancelarCadFuncao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
+        jButtonCancelarCadFuncao.setText("Cancelar");
 
-        jButton1.setBackground(new java.awt.Color(102, 76, 0));
-        jButton1.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/save.png"))); // NOI18N
-        jButton1.setText("Salvar");
+        jButtonSalvarFuncao.setBackground(new java.awt.Color(102, 76, 0));
+        jButtonSalvarFuncao.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
+        jButtonSalvarFuncao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/save.png"))); // NOI18N
+        jButtonSalvarFuncao.setText("Salvar");
 
-        jTextField2.setBackground(new java.awt.Color(242, 233, 208));
+        jTextFieldCadNomeFuncao.setBackground(new java.awt.Color(242, 233, 208));
 
         jLabel4.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel4.setText("Nome da Função:");
@@ -66,7 +66,7 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel5.setText("Tipo da Função:");
 
-        jTextField3.setBackground(new java.awt.Color(242, 233, 208));
+        jTextFieldCadTipoFuncao.setBackground(new java.awt.Color(242, 233, 208));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,12 +84,12 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel5)
                                 .addGap(28, 28, 28)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldCadTipoFuncao)
+                            .addComponent(jTextFieldCadNomeFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jButtonSalvarFuncao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonCancelarCadFuncao)
                         .addGap(36, 36, 36)))
                 .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -105,15 +105,15 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCadNomeFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCadTipoFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonSalvarFuncao)
+                    .addComponent(jButtonCancelarCadFuncao))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -135,13 +135,13 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonCancelarCadFuncao;
+    private javax.swing.JButton jButtonSalvarFuncao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextFieldCadNomeFuncao;
+    private javax.swing.JTextField jTextFieldCadTipoFuncao;
     // End of variables declaration//GEN-END:variables
 }

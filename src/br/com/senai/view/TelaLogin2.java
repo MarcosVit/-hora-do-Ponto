@@ -6,22 +6,25 @@
 
 package br.com.senai.view;
 
-import br.com.senai.Controle.FuncionarioDAO;
-import br.com.senai.Entidades.Funcionario;
-import java.util.List;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author TECNICO
  */
-public class TelaLogin extends javax.swing.JInternalFrame {
+public class TelaLogin2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaLogin
+     * Creates new form TelaLogin2
      */
-    public TelaLogin() {
+    public TelaLogin2() {
         initComponents();
+    }
+    
+    private void telaPrinc() {
+
+        TelaPrincipal princ = new TelaPrincipal();
+        princ.setVisible(true);
+        dispose();
+
     }
 
     /**
@@ -41,17 +44,15 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         jButtonEntrar = new javax.swing.JButton();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(217, 191, 115));
-        setResizable(false);
-        setTitle("Login");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(360, 280));
         setMinimumSize(new java.awt.Dimension(360, 280));
         setPreferredSize(new java.awt.Dimension(360, 280));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(217, 191, 115));
         jPanel1.setMaximumSize(new java.awt.Dimension(360, 280));
         jPanel1.setMinimumSize(new java.awt.Dimension(360, 280));
-        jPanel1.setPreferredSize(new java.awt.Dimension(360, 280));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/login_2.png"))); // NOI18N
         jLabel1.setText("login");
@@ -130,9 +131,7 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -143,69 +142,46 @@ public class TelaLogin extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextFieldLoginActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-/*        
-        Funcionario func = new Funcionario();
-        FuncionarioDAO dao = new FuncionarioDAO();
-        List<Funcionario> listaFuncionario;
-        TelaPrincipal prin = new TelaPrincipal();
 
-        if (jTextFieldLogin.getText().isEmpty() || jPasswordFieldSenha.getText().isEmpty()) {
-
-            JOptionPane.showMessageDialog(null, "Nenhum campo deve estar vazio", "Atenção", JOptionPane.ERROR_MESSAGE);
-
-        } else {
-
-            func.setLogin(jTextFieldLogin.getText());
-            func.setSenha(jPasswordFieldSenha.getText());
-
-            String login = "", senha = "", perfil = "", nome = "";
-
-            listaFuncionario = dao.buscaFuncionarioPorLoginSenha(func.getLogin(), func.getSenha());
-
-            for (Funcionario funcionario : listaFuncionario) {
-
-                login = funcionario.getLogin();
-                senha = funcionario.getSenha();
-
-            }
-
-            if (login.equals(jTextFieldLogin.getText()) && senha.equals(jPasswordFieldSenha.getText())) {
-
-                if (perfil.equals("Administrador")) {
-
-                    prin.
-                    TelaPrincipal.jMenuEmitir.setEnabled(true);
-                    TelaPrincipal.jMenuOpcao.setEnabled(true);
-                    TelaPrincipal.jMenuItemLongoff.setEnabled(true);
-                    TelaPrincipal.jLabelFuncionario.setText(nome);
-                    TelaPrincipal.jLabelPerfil.setText(perfil);
-                    dispose();
-                    
-                }else{
-                    
-                    TelaPrincipal.jMenuCadastro.setEnabled(true);
-                    TelaPrincipal.jMenuEmitir.setEnabled(true);
-                    TelaPrincipal.jMenuOpcao.setEnabled(true);
-                    TelaPrincipal.jMenuItemCliente.setEnabled(true);
-                    TelaPrincipal.jMenuItemFuncionario.setEnabled(false);
-                    TelaPrincipal.jMenuItemEvento.setEnabled(false);
-                    TelaPrincipal.jMenuItemLongoff.setEnabled(true);
-                    TelaPrincipal.jLabelFuncionario.setText(login);
-                    TelaPrincipal.jLabelPerfil.setText(perfil);
-                    
-                    dispose();
-                }
-
-            } else {
-
-                JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos", "Atenção", JOptionPane.ERROR_MESSAGE);
-                jTextFieldLogin.setText("");
-                jPasswordFieldSenha.setText("");
-            }
-
-        }*/
+        /*login*/
+        telaPrinc();
+        
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaLogin2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaLogin2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaLogin2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaLogin2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaLogin2().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEntrar;

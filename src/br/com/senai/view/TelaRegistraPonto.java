@@ -31,13 +31,13 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jComboBoxFuncionario = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jTextFieldHrEntrada = new javax.swing.JTextField();
+        jTextFieldHrSaida = new javax.swing.JTextField();
+        jButtonCancelarPonto = new javax.swing.JButton();
+        jButtonSalvarPonto = new javax.swing.JButton();
 
         setClosable(true);
         setResizable(false);
@@ -56,8 +56,8 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel2.setText("Funcionário:");
 
-        jComboBox1.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxFuncionario.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
+        jComboBoxFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel3.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel3.setText("Hora da Entrada:");
@@ -65,19 +65,19 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel4.setText("Hora da Saída:");
 
-        jTextField1.setBackground(new java.awt.Color(242, 233, 208));
+        jTextFieldHrEntrada.setBackground(new java.awt.Color(242, 233, 208));
 
-        jTextField2.setBackground(new java.awt.Color(242, 233, 208));
+        jTextFieldHrSaida.setBackground(new java.awt.Color(242, 233, 208));
 
-        jButton2.setBackground(new java.awt.Color(102, 76, 0));
-        jButton2.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
-        jButton2.setText("Cancelar");
+        jButtonCancelarPonto.setBackground(new java.awt.Color(102, 76, 0));
+        jButtonCancelarPonto.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
+        jButtonCancelarPonto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
+        jButtonCancelarPonto.setText("Cancelar");
 
-        jButton1.setBackground(new java.awt.Color(102, 76, 0));
-        jButton1.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/save.png"))); // NOI18N
-        jButton1.setText("Salvar");
+        jButtonSalvarPonto.setBackground(new java.awt.Color(102, 76, 0));
+        jButtonSalvarPonto.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
+        jButtonSalvarPonto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/save.png"))); // NOI18N
+        jButtonSalvarPonto.setText("Salvar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,9 +89,9 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButton1)
+                            .addComponent(jButtonSalvarPonto)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2))
+                            .addComponent(jButtonCancelarPonto))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel3)
@@ -99,9 +99,9 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel4))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -112,20 +112,20 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonCancelarPonto)
+                    .addComponent(jButtonSalvarPonto))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,7 +136,9 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,15 +146,15 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton jButtonCancelarPonto;
+    private javax.swing.JButton jButtonSalvarPonto;
+    private javax.swing.JComboBox jComboBoxFuncionario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextFieldHrEntrada;
+    private javax.swing.JTextField jTextFieldHrSaida;
     // End of variables declaration//GEN-END:variables
 }
