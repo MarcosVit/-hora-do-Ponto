@@ -16,6 +16,8 @@ public class Funcionario {
     private double hrAcumulada;
     @ManyToOne(targetEntity = DiaCorrente.class)
     private DiaCorrente dc;
+    @ManyToOne(targetEntity = Funcao.class)
+    private Funcao idFuncao;
 
     public int getId() {
         return id;

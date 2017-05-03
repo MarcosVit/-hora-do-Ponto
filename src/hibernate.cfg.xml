@@ -51,5 +51,6 @@ Contributor(s):
     <property name="hibernate.show_sql">true</property>
     <mapping class="br.com.Entidades.Funcionario"/>
     <mapping class="br.com.Entidades.DiaCorrente"/>
+    <mapping class="br.com.Entidades.Funcao"/>
   </session-factory>
 </hibernate-configuration>
