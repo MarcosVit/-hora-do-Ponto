@@ -145,6 +145,7 @@ public class TelaLogin2 extends javax.swing.JFrame {
 
         /*login*/
         telaPrinc();
+        /*criar funcao teste valida login*/
         
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
