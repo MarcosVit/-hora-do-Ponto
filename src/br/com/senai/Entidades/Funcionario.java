@@ -1,4 +1,4 @@
-package br.com.Entidades;
+package br.com.senai.Entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

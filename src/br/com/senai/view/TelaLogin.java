@@ -39,16 +39,17 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(217, 191, 115));
         setResizable(false);
         setTitle("Login");
-        setMaximumSize(new java.awt.Dimension(360, 225));
-        setMinimumSize(new java.awt.Dimension(360, 225));
-        setPreferredSize(new java.awt.Dimension(360, 225));
+        setMaximumSize(new java.awt.Dimension(360, 280));
+        setMinimumSize(new java.awt.Dimension(360, 280));
+        setPreferredSize(new java.awt.Dimension(360, 280));
 
         jPanel1.setBackground(new java.awt.Color(217, 191, 115));
-        jPanel1.setMaximumSize(new java.awt.Dimension(360, 225));
-        jPanel1.setMinimumSize(new java.awt.Dimension(360, 225));
-        jPanel1.setPreferredSize(new java.awt.Dimension(360, 225));
+        jPanel1.setMaximumSize(new java.awt.Dimension(360, 280));
+        jPanel1.setMinimumSize(new java.awt.Dimension(360, 280));
+        jPanel1.setPreferredSize(new java.awt.Dimension(360, 280));
 
-        jLabel1.setText("Sandslash Construtora");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/login.png"))); // NOI18N
+        jLabel1.setText("login");
 
         jLabel2.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel2.setText("Login:");
@@ -66,6 +67,7 @@ public class TelaLogin extends javax.swing.JInternalFrame {
 
         jButton1.setBackground(new java.awt.Color(102, 76, 0));
         jButton1.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/login.png"))); // NOI18N
         jButton1.setText("Entrar");
 
         jPasswordField1.setBackground(new java.awt.Color(242, 233, 208));
@@ -78,9 +80,6 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -91,15 +90,18 @@ public class TelaLogin extends javax.swing.JInternalFrame {
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(jButton1)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,7 +111,7 @@ public class TelaLogin extends javax.swing.JInternalFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -120,7 +122,9 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
