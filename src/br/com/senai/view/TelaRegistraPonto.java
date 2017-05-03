@@ -51,7 +51,7 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(360, 400));
         jPanel1.setPreferredSize(new java.awt.Dimension(360, 400));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/RegPont.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/RegPont.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel2.setText("Funcionário:");

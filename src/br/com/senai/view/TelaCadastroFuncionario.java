@@ -55,7 +55,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(360, 400));
         jPanel1.setPreferredSize(new java.awt.Dimension(360, 400));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CadastFunc.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/CadastFunc.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel2.setText("Nome:");
@@ -167,7 +167,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -178,7 +178,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

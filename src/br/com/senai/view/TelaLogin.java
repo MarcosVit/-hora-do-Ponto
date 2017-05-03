@@ -48,7 +48,7 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(360, 280));
         jPanel1.setPreferredSize(new java.awt.Dimension(360, 280));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/login.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/login_2.png"))); // NOI18N
         jLabel1.setText("login");
 
         jLabel2.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
