@@ -4,17 +4,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 public class DiaCorrente {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String status;
+
+    private String status,data;
+
     private long hrEntrada, hrSaida, minContados;
-    @OneToMany(targetEntity = Funcionario.class)
+
+    @ManyToOne(targetEntity = Funcionario.class)
     private Funcionario funcionario;
 
     public int getId() {
@@ -64,7 +68,13 @@ public class DiaCorrente {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
-    
-    
-    
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
 }

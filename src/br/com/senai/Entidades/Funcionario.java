@@ -5,17 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Funcionario {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String cpf, nome, funcao, login, senha;
+
+    private String cpf, nome, login, senha;
+
     private double hrAcumulada;
-    @ManyToOne(targetEntity = DiaCorrente.class)
-    private DiaCorrente dc;
+
+    
     @ManyToOne(targetEntity = Funcao.class)
     private Funcao idFuncao;
 
@@ -43,14 +47,6 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public String getFuncao() {
-        return funcao;
-    }
-
-    public void setFuncao(String funcao) {
-        this.funcao = funcao;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -73,13 +69,19 @@ public class Funcionario {
 
     public void setHrAcumulada(double hrAcumulada) {
         this.hrAcumulada = hrAcumulada;
-    }    
-
-    public DiaCorrente getDc() {
-        return dc;
     }
 
-    public void setDc(DiaCorrente dc) {
-        this.dc = dc;
+    public Funcao getIdFuncao() {
+        return idFuncao;
     }
+
+    public void setIdFuncao(Funcao idFuncao) {
+        this.idFuncao = idFuncao;
+    }
+
+
+    
+
+   
+    
 }

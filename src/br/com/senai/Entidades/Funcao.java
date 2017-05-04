@@ -1,18 +1,22 @@
 package br.com.senai.Entidades;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+@Entity
 public class Funcao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String nomeFuncao, tipoFuncao;
-    @OneToMany(targetEntity = Funcionario.class)
-    private Funcionario idFuncionario;
+
+   
 
     public int getId() {
         return id;
@@ -38,4 +42,6 @@ public class Funcao {
         this.tipoFuncao = tipoFuncao;
     }
 
+    
+    
 }
