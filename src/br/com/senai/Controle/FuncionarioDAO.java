@@ -6,7 +6,11 @@
 package br.com.senai.Controle;
 
 import br.com.Util.HibernateUtil;
+import br.com.senai.Entidades.Funcao;
 import br.com.senai.Entidades.Funcionario;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -45,21 +49,29 @@ public class FuncionarioDAO {
         }
     }
 
-    public boolean ValidarLogin(String login, String senha) {
+     public List<Funcionario> selecionaFuncionario() {
 
-        Funcionario listaFuncionario;
+        List<Funcionario> listaFuncionario = new ArrayList<>();
 
         sessao = HibernateUtil.getSessionFactory().openSession();
         sessao.beginTransaction();
-
+        //Cria criterios ou filtros ou condições de seleção.
         Criteria criteria = sessao.createCriteria(Funcionario.class);
+        
+        //Retorna os dados da consulta com o banco de dados.
+        listaFuncionario = criteria.list();
 
-        criteria.add(Restrictions.eq("login", login)).add(Restrictions.eq("senha", senha));
+        return listaFuncionario;
 
-        listaFuncionario = (Funcionario) criteria.uniqueResult();
-        ID_LOGIN = listaFuncionario.getId();
-
-        return listaFuncionario.getLogin().equals("");
     }
+     public void CalculoHoraExtra(Long HoraDia){
+         
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        sessao.beginTransaction();
+        //Cria criterios ou filtros ou condições de seleção.
+        Criteria criteria = sessao.createCriteria(Funcionario.class); 
+         
+     }
+     
 
 }
