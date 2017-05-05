@@ -184,7 +184,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextFieldCadNomeFuncionarioActionPerformed
 
     private void jButtonSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarFuncionarioActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here.:
         Funcionario func = new Funcionario();
         FuncionarioDAO dao = new FuncionarioDAO();
         Funcao funcao = (Funcao) jComboBoxCadFuncaoFuncionario.getSelectedItem();
