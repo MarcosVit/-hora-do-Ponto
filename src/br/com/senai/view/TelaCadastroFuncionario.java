@@ -45,8 +45,8 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         jButtonSalvarFuncionario = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jTextFieldCadNomeFuncionario = new javax.swing.JTextField();
-        jTextFieldCadCPFFuncionario = new javax.swing.JTextField();
         jComboBoxCadFuncaoFuncionario = new javax.swing.JComboBox();
+        jTextFieldCadCPFFuncionario = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setResizable(false);
@@ -98,15 +98,15 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextFieldCadCPFFuncionario.setBackground(new java.awt.Color(242, 233, 208));
-        jTextFieldCadCPFFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCadCPFFuncionarioActionPerformed(evt);
-            }
-        });
-
         jComboBoxCadFuncaoFuncionario.setBackground(new java.awt.Color(242, 233, 208));
         jComboBoxCadFuncaoFuncionario.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
+
+        jTextFieldCadCPFFuncionario.setBackground(new java.awt.Color(242, 233, 208));
+        try {
+            jTextFieldCadCPFFuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,10 +124,10 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
                                 .addGap(26, 26, 26)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldCadCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxCadFuncaoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxCadFuncaoFuncionario, 0, 180, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldCadCPFFuncionario)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(jButtonSalvarFuncionario)
@@ -144,9 +144,11 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(jTextFieldCadCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldCadCPFFuncionario)
+                        .addGap(5, 5, 5)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -175,10 +177,6 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
     private void jTextFieldCadNomeFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCadNomeFuncionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCadNomeFuncionarioActionPerformed
-
-    private void jTextFieldCadCPFFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCadCPFFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCadCPFFuncionarioActionPerformed
 
     private void jButtonSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
@@ -227,7 +225,7 @@ private void preencheComboBoxFuncao() {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldCadCPFFuncionario;
+    private javax.swing.JFormattedTextField jTextFieldCadCPFFuncionario;
     private javax.swing.JTextField jTextFieldCadNomeFuncionario;
     // End of variables declaration//GEN-END:variables
 }

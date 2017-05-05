@@ -51,18 +51,21 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBoxFuncionario = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldHrEntrada = new javax.swing.JTextField();
-        jTextFieldHrSaida = new javax.swing.JTextField();
         jButtonCancelarPonto = new javax.swing.JButton();
         jButtonSalvarPonto = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextFieldData = new javax.swing.JTextField();
+        jTextFieldHrEntrada = new javax.swing.JFormattedTextField();
+        jTextFieldData1 = new javax.swing.JFormattedTextField();
+        jTextFieldHrSaida = new javax.swing.JFormattedTextField();
+
+        jFormattedTextField1.setText("jFormattedTextField1");
 
         setClosable(true);
         setResizable(false);
@@ -89,10 +92,6 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel4.setText("Hora da Saída:");
 
-        jTextFieldHrEntrada.setBackground(new java.awt.Color(242, 233, 208));
-
-        jTextFieldHrSaida.setBackground(new java.awt.Color(242, 233, 208));
-
         jButtonCancelarPonto.setBackground(new java.awt.Color(102, 76, 0));
         jButtonCancelarPonto.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
         jButtonCancelarPonto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
@@ -116,14 +115,57 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel5.setText("Data:");
 
-        jTextFieldData.setBackground(new java.awt.Color(242, 233, 208));
+        jTextFieldHrEntrada.setBackground(new java.awt.Color(242, 233, 208));
+        try {
+            jTextFieldHrEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldHrEntrada.setToolTipText("");
+        jTextFieldHrEntrada.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldHrEntrada.setPreferredSize(new java.awt.Dimension(6, 20));
+        jTextFieldHrEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldHrEntradaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldData1.setBackground(new java.awt.Color(242, 233, 208));
+        try {
+            jTextFieldData1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldData1.setToolTipText("");
+        jTextFieldData1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldData1.setPreferredSize(new java.awt.Dimension(6, 20));
+        jTextFieldData1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldData1ActionPerformed(evt);
+            }
+        });
+
+        jTextFieldHrSaida.setBackground(new java.awt.Color(242, 233, 208));
+        try {
+            jTextFieldHrSaida.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldHrSaida.setToolTipText("");
+        jTextFieldHrSaida.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldHrSaida.setPreferredSize(new java.awt.Dimension(6, 20));
+        jTextFieldHrSaida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldHrSaidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -139,10 +181,11 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel5))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldData, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(8, 8, 8))))
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -155,18 +198,24 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(5, 5, 5)))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
-                    .addComponent(jTextFieldData, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarPonto)
                     .addComponent(jButtonCancelarPonto))
@@ -196,7 +245,7 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         DiaCorrente dc = new DiaCorrente();
         PontoDAO daodc = new PontoDAO();
         
-        dc.setData(jTextFieldData.getText());
+        dc.setData(jTextFieldHrEntrada.getText());
         dc.setFuncionario(func);
         dc.setHrEntrada(jTextFieldHrEntrada.getText());
         dc.setHrSaida(jTextFieldHrSaida.getText());
@@ -211,19 +260,32 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jButtonCancelarPontoActionPerformed
 
+    private void jTextFieldHrEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHrEntradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldHrEntradaActionPerformed
+
+    private void jTextFieldData1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldData1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldData1ActionPerformed
+
+    private void jTextFieldHrSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHrSaidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldHrSaidaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelarPonto;
     private javax.swing.JButton jButtonSalvarPonto;
     private javax.swing.JComboBox jComboBoxFuncionario;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldData;
-    private javax.swing.JTextField jTextFieldHrEntrada;
-    private javax.swing.JTextField jTextFieldHrSaida;
+    private javax.swing.JFormattedTextField jTextFieldData1;
+    private javax.swing.JFormattedTextField jTextFieldHrEntrada;
+    private javax.swing.JFormattedTextField jTextFieldHrSaida;
     // End of variables declaration//GEN-END:variables
 }
