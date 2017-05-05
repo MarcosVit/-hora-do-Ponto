@@ -202,7 +202,7 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         dc.setHrSaida(jTextFieldHrSaida.getText());
         dc.setMinContados(daodc.cauculaHoraAcumulada(jTextFieldHrEntrada.getText(), jTextFieldHrSaida.getText()));
         dc.setStatus(daodc.escolheStatus(daodc.cauculaHoraAcumulada(jTextFieldHrEntrada.getText(), jTextFieldHrSaida.getText())));
-        
+        dao.CalculoHoraExtra(dc.getMinContados(), func.getId());
         daodc.salvar(dc);
     }//GEN-LAST:event_jButtonSalvarPontoActionPerformed
 

@@ -65,6 +65,30 @@ public class FuncionarioDAO {
         return listaFuncionario;
 //
     }
+      public boolean alterar(Funcionario funcionario) {
+        try {
+
+            sessao = HibernateUtil.getSessionFactory().openSession();
+
+            sessao.beginTransaction();
+
+            sessao.update(funcionario);
+
+            sessao.getTransaction().commit();
+
+            System.out.println("updatado com sucesso");
+            return true;
+
+        } catch (Exception ex) {
+
+            System.out.println("Erro" + ex);
+            return false;
+
+        } finally {
+            sessao.close();
+        }
+    }
+     
      public void CalculoHoraExtra(Long HoraDia,int id){
          
         sessao = HibernateUtil.getSessionFactory().openSession();
@@ -76,13 +100,24 @@ public class FuncionarioDAO {
         Funcionario funcionario = (Funcionario) criteria.uniqueResult();
         
         long HoraExtra = HoraDia-540;
+        
         if(HoraExtra>0){
-            funcionario.setHrAcumulada(funcionario.getHrAcumulada()+HoraExtra);
+            
+            funcionario.setHrAcumulada(funcionario.getHrAcumulada()+ HoraExtra);
+            
         }else if(HoraExtra<0){
-            funcionario.setHrAcumulada(funcionario.getHrAcumulada()-HoraExtra);
+            
+            funcionario.setHrAcumulada(funcionario.getHrAcumulada()+ HoraExtra);
            
-        }                
+        } else{
+            
+            funcionario.setHrAcumulada(funcionario.getHrAcumulada());
+            
+        }
+         
+         alterar(funcionario);
      }
+     
      
 
 }
