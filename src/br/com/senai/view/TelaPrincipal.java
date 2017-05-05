@@ -6,6 +6,7 @@
 
 package br.com.senai.view;
 
+import br.com.senai.Controle.ExibeRelatorio;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Frame;
@@ -286,6 +287,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemRelFuncioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRelFuncioActionPerformed
         /*Chamar Relatorio*/
+        ExibeRelatorio exib = new ExibeRelatorio();
+        
+        exib.geraRelatorio();
     }//GEN-LAST:event_jMenuItemRelFuncioActionPerformed
 
     private void jMenuItemCadFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFuncionarioActionPerformed

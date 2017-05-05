@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-05T18:37:48 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioConstrutora" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="horaponto"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select  horaponto.funcionario.nome, horaponto.diacorrente.`hrEntrada` , horaponto.diacorrente.`hrSaida` 
+, horaponto.diacorrente.status from  horaponto.funcionario , horaponto.diacorrente 
+where  horaponto.diacorrente.funcionario_id =  horaponto.funcionario.id]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="hrEntrada" class="java.lang.String"/>
+	<field name="hrSaida" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+		<groupHeader>
+			<band height="31">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="0a5fc4ac-2e39-4b7a-8f96-59f8eb2df66d"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="2" y="0" width="479" height="24" forecolor="#FFFFFF" uuid="4fbebfd3-a184-45af-b7d9-5c3faaf087b5"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="137" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#FFFFFF" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
+				<image>
+					<reportElement x="4" y="8" width="426" height="57" uuid="b8eacfad-1c17-4b33-bc01-2779c4f6b0c4"/>
+					<imageExpression><![CDATA["C:/Users/TECNICO/Desktop/TITULO.png"]]></imageExpression>
+				</image>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="430" height="32" forecolor="#000000" backcolor="#A1583E" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
+				<staticText>
+					<reportElement x="270" y="3" width="160" height="30" uuid="0d83bd37-86d8-46dd-9e74-5a817be1a31a"/>
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font size="16" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Relatório de Ponto]]></text>
+				</staticText>
+			</frame>
+			<image>
+				<reportElement x="430" y="0" width="125" height="132" uuid="d7211844-ec4c-423f-9e66-9beae0acdbf5"/>
+				<imageExpression><![CDATA["C:/Users/TECNICO/Desktop/Imagens Logo/Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="110" height="33" uuid="50d708fd-c298-4779-9278-2943d08eefb3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="DejaVu Sans" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Funcionários]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="10" width="73" height="30" uuid="de4c8b58-0c6b-4be4-b46b-b510b3cf711e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="10" width="55" height="30" uuid="70689a08-dcd4-4fd8-b85d-5ef2e4137f9f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="9" width="63" height="30" uuid="6a271cfd-d5f4-43f2-ad72-b7146d78aae2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="b50221b5-8254-440b-8c6f-1f0b138c9259"/>
+				<textField>
+					<reportElement x="251" y="3" width="58" height="30" uuid="4752ba5b-1d94-4a90-b07c-0dcdc602933e"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrEntrada}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="351" y="3" width="44" height="25" uuid="921c2bad-aa16-4103-b0fd-884c7e889656"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hrSaida}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="460" y="3" width="95" height="25" uuid="ac390a62-6efb-4ef6-9d1d-449bef850dfb"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="325" y="-1" width="11" height="19" uuid="edb90479-3fd8-43da-a1d6-6d506c8d7b60"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="325" y="-70" width="11" height="19" uuid="414c78fa-a902-48d1-bbce-4db909b15009"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="137d38c7-1a83-4fc5-b156-9d5f1b1a0ddc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

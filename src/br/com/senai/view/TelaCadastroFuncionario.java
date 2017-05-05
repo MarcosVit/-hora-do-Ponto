@@ -107,6 +107,11 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jTextFieldCadCPFFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCadCPFFuncionarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -119,21 +124,21 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                         .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(26, 26, 26)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(jComboBoxCadFuncaoFuncionario, 0, 180, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldCadCPFFuncionario)))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButtonCancelar)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3))
+                                    .addGap(26, 26, 26)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(jComboBoxCadFuncaoFuncionario, 0, 180, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldCadCPFFuncionario))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jButtonSalvarFuncionario)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButtonCancelar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButtonSalvarFuncionario)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,11 +158,11 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jComboBoxCadFuncaoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarFuncionario)
                     .addComponent(jButtonCancelar))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -168,7 +173,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -202,8 +207,13 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonSalvarFuncionarioActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-dispose();        // TODO add your handling code here:
+       // TODO add your handling code here:
+        dispose(); 
     }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jTextFieldCadCPFFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCadCPFFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCadCPFFuncionarioActionPerformed
 private void preencheComboBoxFuncao() {
 
         FuncaoDAO dao = new FuncaoDAO();

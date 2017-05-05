@@ -168,24 +168,25 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                 .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButtonSalvarPonto)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonCancelarPonto))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(8, 8, 8))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButtonSalvarPonto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonCancelarPonto))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldHrEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldHrSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(8, 8, 8)))
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -215,11 +216,11 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarPonto)
                     .addComponent(jButtonCancelarPonto))
-                .addGap(53, 53, 53))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,8 +232,8 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,7 +253,16 @@ public class TelaRegistraPonto extends javax.swing.JInternalFrame {
         dc.setMinContados(daodc.cauculaHoraAcumulada(jTextFieldHrEntrada.getText(), jTextFieldHrSaida.getText()));
         dc.setStatus(daodc.escolheStatus(daodc.cauculaHoraAcumulada(jTextFieldHrEntrada.getText(), jTextFieldHrSaida.getText())));
         dao.CalculoHoraExtra(dc.getMinContados(), func.getId());
-        daodc.salvar(dc);
+        
+        if(daodc.salvar(dc)){
+            JOptionPane.showMessageDialog(null,"Salvo com sucesso!");
+            dc.setFuncionario(func);
+            jTextFieldData1.setText("");
+            jTextFieldHrEntrada.setText("");
+           jTextFieldHrSaida.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null,"Falha ao salvar!");
+        }
     }//GEN-LAST:event_jButtonSalvarPontoActionPerformed
 
     private void jButtonCancelarPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarPontoActionPerformed
