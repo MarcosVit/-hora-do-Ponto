@@ -16,7 +16,8 @@ public class DiaCorrente {
 
     private String status,data;
 
-    private long hrEntrada, hrSaida, minContados;
+    private long  minContados;
+    private String hrEntrada, hrSaida;
 
     @ManyToOne(targetEntity = Funcionario.class)
     private Funcionario funcionario;
@@ -37,21 +38,7 @@ public class DiaCorrente {
         this.status = status;
     }
 
-    public long getHrEntrada() {
-        return hrEntrada;
-    }
-
-    public void setHrEntrada(long hrEntrada) {
-        this.hrEntrada = hrEntrada;
-    }
-
-    public long getHrSaida() {
-        return hrSaida;
-    }
-
-    public void setHrSaida(long hrSaida) {
-        this.hrSaida = hrSaida;
-    }
+    
 
     public long getMinContados() {
         return minContados;
@@ -75,6 +62,22 @@ public class DiaCorrente {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getHrEntrada() {
+        return hrEntrada;
+    }
+
+    public void setHrEntrada(String hrEntrada) {
+        this.hrEntrada = hrEntrada;
+    }
+
+    public String getHrSaida() {
+        return hrSaida;
+    }
+
+    public void setHrSaida(String hrSaida) {
+        this.hrSaida = hrSaida;
     }
 
 }

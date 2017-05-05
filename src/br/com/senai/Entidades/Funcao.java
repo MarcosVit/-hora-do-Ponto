@@ -42,6 +42,13 @@ public class Funcao {
         this.tipoFuncao = tipoFuncao;
     }
 
+    @Override
+    public String toString() {
+        return tipoFuncao;
+    }
+
+    
+
     
     
 }

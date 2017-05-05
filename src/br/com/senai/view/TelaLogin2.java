@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.senai.view;
+
+import br.com.senai.Controle.FuncionarioDAO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,15 +20,14 @@ public class TelaLogin2 extends javax.swing.JFrame {
     public TelaLogin2() {
         initComponents();
     }
-    
+
     private void telaPrinc() {
 
         TelaPrincipal princ = new TelaPrincipal();
         princ.setVisible(true);
         dispose();
-
+        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +48,6 @@ public class TelaLogin2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(360, 280));
         setMinimumSize(new java.awt.Dimension(360, 280));
-        setPreferredSize(new java.awt.Dimension(360, 280));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(217, 191, 115));
@@ -142,11 +142,24 @@ public class TelaLogin2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldLoginActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-
+        FuncionarioDAO dao = new FuncionarioDAO();
         /*login*/
-        telaPrinc();
+        if (dao.confirmaLogin(jTextFieldLogin.getText(), jPasswordFieldSenha.getText())) {
+            JOptionPane.showMessageDialog(null, "Login ou senha incorretos.");
+        } else {
+            if (jTextFieldLogin.getText().equals("Administrador") && jPasswordFieldSenha.getText().equals("admin")) {
+                TelaPrincipal telaprinc = new TelaPrincipal();
+                telaprinc.setVisible(true);
+                dispose();
+
+            } else {
+                TelaPrincipal telaprinc = new TelaPrincipal();
+                telaprinc.setVisible(true);
+                dispose();
+            }
+        }
         /*criar funcao teste valida login*/
-        
+
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**

@@ -151,7 +151,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItemRelFuncio = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItemLogout = new javax.swing.JMenuItem();
         jMenuItemAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -258,15 +257,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4.setText("Opções");
         jMenu4.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
 
-        jMenuItemLogout.setFont(new java.awt.Font("Sakkal Majalla", 0, 15)); // NOI18N
-        jMenuItemLogout.setText("Logout");
-        jMenuItemLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemLogoutActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItemLogout);
-
         jMenuItemAbout.setFont(new java.awt.Font("Sakkal Majalla", 0, 15)); // NOI18N
         jMenuItemAbout.setText("About");
         jMenuItemAbout.addActionListener(new java.awt.event.ActionListener() {
@@ -297,10 +287,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItemRelFuncioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRelFuncioActionPerformed
         /*Chamar Relatorio*/
     }//GEN-LAST:event_jMenuItemRelFuncioActionPerformed
-
-    private void jMenuItemLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemLogoutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemLogoutActionPerformed
 
     private void jMenuItemCadFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFuncionarioActionPerformed
         telaCadastroFuncionario();
@@ -363,7 +349,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemAbout;
     private javax.swing.JMenuItem jMenuItemCadFuncao;
     private javax.swing.JMenuItem jMenuItemCadFuncionario;
-    private javax.swing.JMenuItem jMenuItemLogout;
     private javax.swing.JMenuItem jMenuItemRegPonto;
     private javax.swing.JMenuItem jMenuItemRelFuncio;
     private javax.swing.JPanel jPanel1;

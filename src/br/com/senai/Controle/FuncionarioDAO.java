@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 /**
@@ -62,15 +63,25 @@ public class FuncionarioDAO {
         listaFuncionario = criteria.list();
 
         return listaFuncionario;
-
+//
     }
-     public void CalculoHoraExtra(Long HoraDia){
+     public void CalculoHoraExtra(Long HoraDia,int id){
          
         sessao = HibernateUtil.getSessionFactory().openSession();
         sessao.beginTransaction();
         //Cria criterios ou filtros ou condições de seleção.
-        Criteria criteria = sessao.createCriteria(Funcionario.class); 
-         
+        Criteria criteria = sessao.createCriteria(Funcionario.class);
+        criteria.add(Restrictions.eq("id",id));
+        
+        Funcionario funcionario = (Funcionario) criteria.uniqueResult();
+        
+        long HoraExtra = HoraDia-540;
+        if(HoraExtra>0){
+            funcionario.setHrAcumulada(funcionario.getHrAcumulada()+HoraExtra);
+        }else if(HoraExtra<0){
+            funcionario.setHrAcumulada(funcionario.getHrAcumulada()-HoraExtra);
+           
+        }                
      }
      
 

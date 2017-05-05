@@ -6,6 +6,10 @@
 
 package br.com.senai.view;
 
+import br.com.senai.Controle.FuncaoDAO;
+import br.com.senai.Entidades.Funcao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author TECNICO
@@ -50,11 +54,21 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
         jButtonCancelarCadFuncao.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
         jButtonCancelarCadFuncao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
         jButtonCancelarCadFuncao.setText("Cancelar");
+        jButtonCancelarCadFuncao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarCadFuncaoActionPerformed(evt);
+            }
+        });
 
         jButtonSalvarFuncao.setBackground(new java.awt.Color(102, 76, 0));
         jButtonSalvarFuncao.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
         jButtonSalvarFuncao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/save.png"))); // NOI18N
         jButtonSalvarFuncao.setText("Salvar");
+        jButtonSalvarFuncao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarFuncaoActionPerformed(evt);
+            }
+        });
 
         jTextFieldCadNomeFuncao.setBackground(new java.awt.Color(242, 233, 208));
 
@@ -132,6 +146,27 @@ public class TelaCadastroFuncao extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonSalvarFuncaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarFuncaoActionPerformed
+        // TODO add your handling code here:
+        Funcao funcao = new Funcao();
+        funcao.setNomeFuncao(jTextFieldCadNomeFuncao.getText());
+        funcao.setTipoFuncao(jTextFieldCadTipoFuncao.getText());
+        FuncaoDAO dao = new FuncaoDAO();
+        if(dao.salvarFuncao(funcao)){
+            JOptionPane.showMessageDialog(null,"Cadastrado com sucesso!");
+            jTextFieldCadNomeFuncao.setText("");
+            jTextFieldCadTipoFuncao.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null,"Informações Inválidas");
+        }
+        
+    }//GEN-LAST:event_jButtonSalvarFuncaoActionPerformed
+
+    private void jButtonCancelarCadFuncaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadFuncaoActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButtonCancelarCadFuncaoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

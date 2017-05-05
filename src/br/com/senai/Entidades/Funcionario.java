@@ -15,7 +15,7 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String cpf, nome, login, senha;
+    private String cpf, nome;
 
     private double hrAcumulada;
 
@@ -47,23 +47,7 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public double getHrAcumulada() {
+        public double getHrAcumulada() {
         return hrAcumulada;
     }
 
@@ -77,6 +61,11 @@ public class Funcionario {
 
     public void setIdFuncao(Funcao idFuncao) {
         this.idFuncao = idFuncao;
+    }
+
+    @Override
+    public String toString() {
+        return  nome ;
     }
 
 

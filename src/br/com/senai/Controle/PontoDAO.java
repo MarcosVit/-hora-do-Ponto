@@ -40,5 +40,36 @@ public class PontoDAO {
             sessao.close();
         }
 }
+    public long cauculaHoraAcumulada(String horaEntrada, String horaSaida){
+         //13:59
+        
+         
+       Long num1E= Long.parseLong(horaEntrada.substring(0,2));
+       Long num2E= Long.parseLong(horaEntrada.substring(3,5));
+       
+       Long caulculoE = num1E*60;
+       Long resultadoEntrada = caulculoE +num2E;
+       
+       Long num1S= Long.parseLong(horaSaida.substring(0,2));
+       Long num2S= Long.parseLong(horaSaida.substring(3,5));
+       
+       Long caulculoS = num1S*60;
+       Long resultadoSaida = caulculoS +num2S;
+       
+Long resultado = resultadoSaida-resultadoEntrada;
+        return resultado; 
+     }
+     
+     public String escolheStatus(double horaAcumulada){
+         String statusAtraso=null;
+         if (horaAcumulada == 540) {
+            statusAtraso = "Tempo correto";
+        } else if (horaAcumulada > 540) {
+            statusAtraso = "Hora extra";
+        } else if (horaAcumulada < 540) {
+            statusAtraso = "Atrasado";
+        }
+        return statusAtraso;
+     }
     
 }

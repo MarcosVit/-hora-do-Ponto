@@ -6,6 +6,13 @@
 
 package br.com.senai.view;
 
+import br.com.senai.Controle.FuncaoDAO;
+import br.com.senai.Controle.FuncionarioDAO;
+import br.com.senai.Entidades.Funcao;
+import br.com.senai.Entidades.Funcionario;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author TECNICO
@@ -17,6 +24,8 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
      */
     public TelaCadastroFuncionario() {
         initComponents();
+        preencheComboBoxFuncao();
+        
     }
 
     /**
@@ -33,14 +42,10 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jButtonSalvarFuncionario = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jPasswordFieldCadSenhaFuncionario = new javax.swing.JPasswordField();
         jTextFieldCadNomeFuncionario = new javax.swing.JTextField();
         jTextFieldCadCPFFuncionario = new javax.swing.JTextField();
-        jTextFieldCadLoginFuncionario = new javax.swing.JTextField();
         jComboBoxCadFuncaoFuncionario = new javax.swing.JComboBox();
 
         setClosable(true);
@@ -66,23 +71,25 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
         jLabel4.setText("Função:");
 
-        jLabel5.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
-        jLabel5.setText("Login:");
-
-        jLabel6.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
-        jLabel6.setText("Senha:");
-
         jButtonSalvarFuncionario.setBackground(new java.awt.Color(102, 76, 0));
         jButtonSalvarFuncionario.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
         jButtonSalvarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/save.png"))); // NOI18N
         jButtonSalvarFuncionario.setText("Salvar");
+        jButtonSalvarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarFuncionarioActionPerformed(evt);
+            }
+        });
 
         jButtonCancelar.setBackground(new java.awt.Color(102, 76, 0));
         jButtonCancelar.setFont(new java.awt.Font("Sakkal Majalla", 0, 25)); // NOI18N
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/senai/imagens/cancel.png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
-
-        jPasswordFieldCadSenhaFuncionario.setBackground(new java.awt.Color(242, 233, 208));
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
 
         jTextFieldCadNomeFuncionario.setBackground(new java.awt.Color(242, 233, 208));
         jTextFieldCadNomeFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -98,16 +105,8 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextFieldCadLoginFuncionario.setBackground(new java.awt.Color(242, 233, 208));
-        jTextFieldCadLoginFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCadLoginFuncionarioActionPerformed(evt);
-            }
-        });
-
         jComboBoxCadFuncaoFuncionario.setBackground(new java.awt.Color(242, 233, 208));
         jComboBoxCadFuncaoFuncionario.setFont(new java.awt.Font("Sakkal Majalla", 0, 20)); // NOI18N
-        jComboBoxCadFuncaoFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -120,16 +119,12 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                         .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel6)
                                     .addComponent(jLabel3))
                                 .addGap(26, 26, 26)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldCadLoginFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordFieldCadSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldCadCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBoxCadFuncaoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -144,7 +139,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldCadNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,15 +151,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jComboBoxCadFuncaoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextFieldCadLoginFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jPasswordFieldCadSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarFuncionario)
                     .addComponent(jButtonCancelar))
@@ -193,10 +180,43 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCadCPFFuncionarioActionPerformed
 
-    private void jTextFieldCadLoginFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCadLoginFuncionarioActionPerformed
+    private void jButtonSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCadLoginFuncionarioActionPerformed
+        Funcionario func = new Funcionario();
+        FuncionarioDAO dao = new FuncionarioDAO();
+        Funcao funcao = (Funcao) jComboBoxCadFuncaoFuncionario.getSelectedItem();
+        
+        func.setCpf(jTextFieldCadCPFFuncionario.getText());
+        
+        func.setNome(jTextFieldCadNomeFuncionario.getText());
+        func.setIdFuncao(funcao);
+        
+        if(dao.salvar(func)){
+            JOptionPane.showMessageDialog(null,"Salvo com sucesso!");
+            jTextFieldCadCPFFuncionario.setText("");
+            jTextFieldCadNomeFuncionario.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null,"Falha ao salvar!");
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButtonSalvarFuncionarioActionPerformed
 
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+private void preencheComboBoxFuncao() {
+
+        FuncaoDAO dao = new FuncaoDAO();
+        List<Funcao> listaFuncao = dao.selecionaFuncao();
+
+        for (Funcao funcao : listaFuncao) {
+
+            jComboBoxCadFuncaoFuncionario.addItem(funcao);
+            
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelar;
@@ -206,12 +226,8 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordFieldCadSenhaFuncionario;
     private javax.swing.JTextField jTextFieldCadCPFFuncionario;
-    private javax.swing.JTextField jTextFieldCadLoginFuncionario;
     private javax.swing.JTextField jTextFieldCadNomeFuncionario;
     // End of variables declaration//GEN-END:variables
 }
